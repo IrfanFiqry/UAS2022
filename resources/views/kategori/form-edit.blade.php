@@ -6,10 +6,23 @@
         @csrf
         @method("put")
 
-        Nama : <input type="text" name="nama"> <br>
-        Keterangan: <textarea name="keterangan" id="" cols="30" rows="10"></textarea> <br>
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <div class="mb-3 row">
+                    <label for="name" class="col-sm-2 col-form-label">Kategori</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="name">
+                    </div>
+            </div>
 
-        <button type="submit">Simpan</button>
+            <div class="mb-3 row">
+                    <label for="keterangan" class="col-sm-2 col-form-label">Keterangan</label>
+                    <div class="col-sm-10">
+                        <textarea name="keterangan" id="" cols="30" rows="5"></textarea>
+                    </div>
+            </div>
+
+        </div>
+        <button type="submit" class=" btn btn-primary">Simpan</button>
     </form>
 
 

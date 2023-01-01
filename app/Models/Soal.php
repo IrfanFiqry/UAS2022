@@ -16,9 +16,14 @@ class Soal extends Model
         return $this->belongsTo(Pelajar::class, "pelajar_id");
     }
 
-    public function komentar()
+    public function jawaban()
     {
-        return $this->hasOne(User::class, "pelajar_id");
+        return $this->hasMany(User::class, "jawaban_id");
+    }
+
+    public function kategorisoal()
+    {
+        return $this->belongsTo(Kategorisoal::class, "kategorisoal_id");
     }
     
 }

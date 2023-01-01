@@ -44,7 +44,7 @@
                                         <hr>
                                         <div class="text-center">
                                             Tidak ada akun
-                                        <a href="user_input">Daftar disini</a>
+                                        <a href="{{route('user_input')}}"">Daftar disini</a>
                                     </div>
                                 </div>
                             </div>

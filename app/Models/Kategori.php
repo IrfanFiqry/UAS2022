@@ -9,4 +9,11 @@ class Kategori extends Model
 {
     use HasFactory;
     protected $table = "kategori";
+
+    public function kategorisoal()
+    {
+        return $this->belongsTo(Kategorisoal::class, "kategorisoal_id");
+    }
 }
+
+

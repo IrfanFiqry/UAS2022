@@ -2,10 +2,10 @@
 
 @section("konten")
 
-    <h1>Semua Data</h1>
+    <h1>Semua Kategori</h1>
 
     @foreach($data as $kategori)
-        Nama : {{ $kategori->name }} <br>
+        Kategori : {{ $kategori->name }} <br>
         Keterangan: {{ $kategori->keterangan }} <br>
         <a href="{{ route('ubah_kategori', ['id' => $kategori->id]) }}">Ubah</a>
         <a href="{{ route('tampil_kategori', ['id' => $kategori->id]) }}">Tampil</a>
@@ -17,4 +17,5 @@
         </form>
         <hr>
     @endforeach
+    <a class="btn btn-primary" href="{{route('buat_kategori')}}">Buat Kategori Baru</a>
 @endsection

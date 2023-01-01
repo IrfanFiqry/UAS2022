@@ -8,12 +8,7 @@ use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
-    public function tampil() {
-        $data_user = User::all();
-        return view("user.tampil-user")
-            ->with("data_user", $data_user);
-
-    }
+    
 
     public function formInput() // Hanya tampilan form
     {
@@ -37,6 +32,12 @@ class UserController extends Controller
     public function formEdit($id)
     {
         return view("user.form-update")->with("id", $id);
+    }
+
+    public function tampil() {
+        $data_user = User::all();
+        return view("user.tampil-user")->with("data_user", $data_user);
+
     }
 
     public function update(UserRequest $request, $id)

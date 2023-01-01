@@ -7,6 +7,7 @@ use App\Http\Controllers\SecurityController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PelajarController;
 use App\Http\Controllers\SoalController;
+use App\Http\Controllers\JawabanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,34 +24,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
-    return view("hello");
-})->name("halo");
-
-Route::get('/hii/{nama}', function ($nama) {
-    return view("hii")
-    ->with("nama", $nama)
-    ->with("mk", "Web Lanjut")
-    ->with("waktu", date("H:m:s"));
-})->name("hii");
-
-Route::get('/biodata', function () {
-    return view("biodata");
-})->name("data-diri");
-
-Route::get('/coba', function () {
-    return view("coba");
-})->name("cobaa");
-
-Route::get('/test', function () {
-    return view("test");
-})->name("testt");
-
-Route::get('/goodbye', function () {
-    return view("goodbye");
-})->name("bye");
 
 Route::get('/data/{nama}', [TestingController::class, "data"] )->name("absen");
+
+Route::get('/input-user', [UserController::class, "formInput"])->name("user_input");
+
 
 //simpan user
 Route::post('/simpan-user', [UserController::class, "simpan"])->name("user_simpan");
@@ -73,8 +51,7 @@ Route::middleware("auth")->group(function() {
     Route::get('/tampil-semua-user', [UserController::class, "tampil"])->name("user_tampil");
 
     //form input user baru
-    Route::get('/input-user', [UserController::class, "formInput"])->name("user_input");
-
+    
     Route::get('/show-user/{id}', [UserController::class, "show"])->name("user_show");
 
     
@@ -107,6 +84,7 @@ Route::middleware("auth")->group(function() {
  Route::get("soal/ubah/{id}", [SoalController::class, 'ubah'])->name("ubah_soal");
  Route::put("soal/update/{id}", [SoalController::class, 'update'])->name("update_soal");
  Route::delete("soal/hapus/{id}", [SoalController::class, 'hapus'])->name("hapus_soal");
+ Route::get("soal/jawab/{id}", [SoalController::class, 'jawab'])->name("jawab_soal");
 
  //Route Jawaban
  Route::get("jawaban/buat", [JawabanController::class, 'buat'])->name("buat_jawaban");

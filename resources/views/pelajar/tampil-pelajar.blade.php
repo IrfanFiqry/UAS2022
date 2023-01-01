@@ -1,11 +1,21 @@
 @extends("blank")
 @section("konten")
-
-
-Name : {{ $pelajar -> name }}<br>
-Alamat : {{ $pelajar -> alamat }}<br>
-Kelamin : {{ $pelajar -> kelamin }}<br>
-Create : {{ $pelajar -> created_at }}<br>
-Update : {{ $pelajar -> updated_at}}<br>
-
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Mahasiswa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body class="bg-light">
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <ul class="list-group">
+                <li class="list-group-item active">{{ $pelajar -> name }}</li>
+                <li class="list-group-item">Alamat : {{ $pelajar -> alamat }}</li>
+                <li class="list-group-item">Kelamin : {{ $pelajar -> kelamin }}</li>
+                <li class="list-group-item">Level : {{$pelajar->user->level}}</li>
+                <li class="list-group-item">Create : {{ $pelajar -> created_at }}</li>
+                <li class="list-group-item"> Update : {{ $pelajar -> updated_at}}</li>
+            </ul>
+        </div>
+    </body>
 @endsection

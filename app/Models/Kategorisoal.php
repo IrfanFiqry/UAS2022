@@ -5,18 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Jawaban extends Model
+class Kategorisoal extends Model
 {
     use HasFactory;
-    protected $table = "jawaban";
 
-    public function user()
+    protected $table = "kategorisoal";
+
+
+    public function Kategori()
     {
-        return $this->belongsTo(User::class, "user_id");
+        return $this->belongsTo(Kategori::class, "kategori_id");
     }
 
-    public function soal()
+    public function Soal()
     {
         return $this->belongsTo(Soal::class, "soal_id");
     }
+
 }

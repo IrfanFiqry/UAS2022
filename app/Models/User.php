@@ -48,9 +48,9 @@ class User extends Authenticatable
         return $this->hasOne(Pelajar::class, "user_id");
     }
 
-    public function komentar()
+    public function jawaban()
     {
-        return $this->hasMany(Komentar::class, "user_id");
+        return $this->hasMany(Komentar::class, "jawaban_id");
     }
 
 

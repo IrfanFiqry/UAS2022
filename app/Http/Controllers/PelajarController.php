@@ -53,7 +53,7 @@ class PelajarController extends Controller
     public function update(Request $request, $id)
     {
         $pelajar = pelajar::find($id);
-        $pelajar->nama = $request->get("nama");
+        $pelajar->name = $request->get("name");
         $pelajar->alamat = $request->get("alamat");
         $pelajar->save();
 
